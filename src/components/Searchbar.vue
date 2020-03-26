@@ -12,7 +12,8 @@ export default {
   name: 'Searchbar',
   methods: {
     onSearch() {
-      this.$emit('onSearch', document.getElementById('searchBox').value);
+      var search = document.getElementById('searchBox').value;
+      this.$emit('onSearch', search);
     }
   }
 }

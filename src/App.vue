@@ -1,9 +1,8 @@
 <template>
   <div id="container">
     <div id="displayEl">
-      <searchbar @onSearch="newSearch"></searchbar>
+      <searchbar @onSearch="searchEvent"></searchbar>
       <div> 
-        <news-tab :news="news"></news-tab>
         <router-view />
       </div>
     </div>
@@ -12,35 +11,18 @@
 
 <script>
 import Searchbar from './components/Searchbar.vue'
-import NewsTab from './components/NewsTab.vue'
-import axios from 'axios'
-
-var totalResults = 5;
-var url;
 
 export default {
   name: 'app',
   components: {
-    Searchbar,
-    NewsTab
+    Searchbar
   },
-  data (){ return {news: [] } },
+  data (){ return {news: String } },
   methods: {
-    newSearch(searchInfo) {
-      url = 'https://newsapi.org/v2/everything?q=' +
-      searchInfo + 
-      '&from=2020-03-21' +
-      '&sortBy=popularity' +
-      '&pageSize=' + totalResults +
-      '&apiKey=6388b8718eaa4dd68f5d1e2fc5542ba3';
-
-      axios.get(url).then(response => {
-        this.news = response.data.articles;
-      });
+    searchEvent(search) {
+      this.news = search;
+      this.$router.push({ name: "Search", params:{ id: search } })
     }
-  },
-  created() {
-    this.url = null;
   }
 }
 </script>
