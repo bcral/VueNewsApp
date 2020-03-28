@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="displayEl">
-      <searchbar @onSearch="searchEvent"></searchbar>
+      <searchbar></searchbar>
       <div> 
         <router-view />
       </div>
@@ -17,12 +17,7 @@ export default {
   components: {
     Searchbar
   },
-  data (){ return {news: String } },
   methods: {
-    searchEvent(search) {
-      this.news = search;
-      this.$router.push({ name: "Search", params:{ id: search } })
-    }
   }
 }
 </script>

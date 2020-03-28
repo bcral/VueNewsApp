@@ -20,11 +20,11 @@ export default {
     },
     data (){ return {news: [] } },
     methods: {
-        newSearch(searchInfo) {
+        newSearch() {
             var url;
             url = 'https://newsapi.org/v2/everything?q=' +
-            searchInfo + 
-            '&from=2020-03-21' +
+            this.$route.params.id + 
+            '&from=2020-03-24' +
             '&sortBy=popularity' +
             '&pageSize=' + totalResults +
             '&apiKey=6388b8718eaa4dd68f5d1e2fc5542ba3';
@@ -33,6 +33,12 @@ export default {
                 this.news = response.data.articles;
             });
         }
+    },
+    created () {
+        this.newSearch();
+    },
+      watch: {
+    '$route.params.id': 'newSearch'
     }
 }
 </script>

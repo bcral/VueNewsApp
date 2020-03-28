@@ -2,7 +2,7 @@
   <div id="mainBar">
     <input type="text" id="searchBox" placeholder="search news topics">
     <button @click="onSearch" id="searchBtn">&#9906;</button>
-    <button id="optionsBtn">></button>
+    <button @click="pref" id="optionsBtn">></button>
   </div>
 </template>
 
@@ -13,7 +13,16 @@ export default {
   methods: {
     onSearch() {
       var search = document.getElementById('searchBox').value;
-      this.$emit('onSearch', search);
+      if (search && search != this.$route.params.id) {
+        this.$router.push({ name: "Search", params:{ id: search } })
+      } else if (!search && this.$route.name != 'Home') {
+        this.$router.push({ name: "Home"});
+      }
+    },
+    pref() {
+      if (this.$route.name != 'Preferences') {
+        this.$router.push({ name: "Preferences" })
+      }
     }
   }
 }
