@@ -30,15 +30,15 @@
                 </select>
             </div>
             <div class="flexRow">
-                <label for="startDate">Date From:</label>
+                <label for="startDate">From Date:</label>
 
-                <input type="date" id="startDate" name="date-start"
+                <input v-model="dateFrom" type="date" id="startDate" name="date-start"
                     min="2018-01-01" max="current">
             </div>
             <div class="flexRow">
-                <label for="endtDate">Date To:</label>
+                <label for="endtDate">Up To Date:</label>
 
-                <input type="date" id="endDate" name="date-end"
+                <input v-model="dateTo" type="date" id="endDate" name="date-end"
                     min="2018-01-01" max="current">
             </div>
         </div>
@@ -50,29 +50,30 @@
 
 export default {
     name: 'Preferences',
+    async mounted() {
+        await this.populate();
+    },
     data: function() { 
         return {
-            numOfArts: this.$db.queryNumOfArts,
-            sortValue: this.$db.querySort
+            numOfArts: this.$db.db.queryNumOfArts,
+            sortValue: this.$db.db.querySort,
+            dateTo: this.$db.db.queryDateTo,
+            dateFrom: this.$db.db.queryDateFrom
             }
         },
     methods: {
-        setDate() {
-            var dateObj = new Date();
-            var month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-            var date = ('0' + dateObj.getDate()).slice(-2);
-            var year = dateObj.getFullYear();
-            var shortDate = year + '-' + month + '-' + date;
-
-            document.getElementById('startDate').value = shortDate;
-            return shortDate;
-        },
         saveClick() {
-            this.$db.queryNumOfArts = this.numOfArts;
-            this.$db.querySort = this.sortValue;
-            this.$db.db.queryDateTo = document.getElementById('startDate').value;
-            this.$db.db.queryDateFrom = document.getElementById('endDate').value;
-            console.log(this.$db)
+            this.$db.db.queryNumOfArts = this.numOfArts;
+            this.$db.db.querySort = this.sortValue;
+            this.$db.db.queryDateFrom = document.getElementById('startDate').value;
+            this.$db.db.queryDateTo = document.getElementById('endDate').value;
+        },
+        populate() {
+            this.$db.populate();
+            this.numOfArts = this.$db.db.queryNumOfArts;
+            this.sortValue = this.$db.db.querySort;
+            this.dateFrom = this.$db.db.queryDateFrom;
+            this.dateTo = this.$db.db.queryDateTo;
         }
     }
 }
@@ -97,5 +98,8 @@ export default {
 }
 input {
     text-align: center;
+}
+select {
+    border-radius: 0;
 }
 </style>

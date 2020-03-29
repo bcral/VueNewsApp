@@ -11,8 +11,6 @@
 import NewsArticle from './NewsArticle.vue'
 import axios from 'axios'
 
-var totalResults = 5;
-
 export default {
     name: "NewsTab",
     components: {
@@ -22,19 +20,25 @@ export default {
     methods: {
         newSearch() {
             var url;
+            var dateFrom = this.$db.db.queryDateFrom;
+            var dateTo = this.$db.db.queryDateTo;
             url = 'https://newsapi.org/v2/everything?q=' +
             this.$route.params.id + 
-            '&from=2020-03-24' +
-            '&sortBy=popularity' +
-            '&pageSize=' + totalResults +
+            '&from=' + dateFrom +
+            '&to=' + dateTo +
+            '&sortBy=' + this.$db.db.querySort +
+            '&pageSize=' + this.$db.db.queryNumOfArts +
             '&apiKey=6388b8718eaa4dd68f5d1e2fc5542ba3';
+
+            url = url.toString();
 
             axios.get(url).then(response => {
                 this.news = response.data.articles;
-            });
+            }).catch(error => console.log(error));
         }
     },
-    created () {
+    async created () {
+        await this.$db.populate();
         this.newSearch();
     },
       watch: {

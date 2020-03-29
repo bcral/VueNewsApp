@@ -2,9 +2,7 @@
   <div id="container">
     <div id="displayEl">
       <searchbar></searchbar>
-      <div> 
-        <router-view />
-      </div>
+      <router-view />
     </div>
   </div>
 </template>
@@ -25,8 +23,9 @@ export default {
 <style>
 #container {
   resize: both;
-  background-color: rgb(214, 218, 162);
-  border: solid 2px rgb(114, 112, 22);
+  background-color: rgb(63, 103, 156, 0.8);
+  border: solid 2px rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   height: 380px;
   width: 288px;
   min-height: 380px;
@@ -38,9 +37,8 @@ export default {
   position: relative;
 }
 
-#defaultText {
-  text-align: center;
-  margin: 3em;
-  line-height: 25px;
+#displayEl {
+  height: 100%;
+  width: 100%;
 }
 </style>

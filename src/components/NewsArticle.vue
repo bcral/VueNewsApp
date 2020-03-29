@@ -42,14 +42,13 @@ export default {
     width: 65%;
 }
 .newsArticle {
-    width: 100%;
     border-right: solid 2px #eee;
     border-bottom: solid 2px #eee;
     border-left: solid 2px #eee;
     overflow: hidden;
     display: flex;
 	flex-direction: row;
-    background-color: rgb(191, 194, 143);
+    background-color: rgb(63, 103, 156);
     max-height: 10%;
 }
 .newsImg {
@@ -69,10 +68,11 @@ export default {
     align-self: flex-start;
     overflow: wrap;
     word-wrap: break-word;
+    text-decoration: underline;
 }
 .newsContent{
     font-size: 14px;
-    padding: 0.2em 0.4em 0.2em 1em;
+    padding: 0.2em 0.6em 0.2em 1em;
 
 }
 .newsHeader {

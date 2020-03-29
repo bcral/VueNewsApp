@@ -2,7 +2,9 @@
   <div id="mainBar">
     <input type="text" id="searchBox" placeholder="search news topics">
     <button @click="onSearch" id="searchBtn">&#9906;</button>
-    <button @click="pref" id="optionsBtn">></button>
+    <button @click="pref" id="optionsBtn">
+      &#8942;
+    </button>
   </div>
 </template>
 
@@ -38,7 +40,7 @@ export default {
 }
 
 #searchBox {
-  background-color: rgb(252, 253, 234);
+  background-color: rgb(255, 255, 255);
   margin: auto;
   top: 0px;
   left: 0px;
@@ -57,14 +59,19 @@ export default {
 #searchBtn {
   width: 35px;
   height: 35px;
-  background-color: rgb(214, 218, 162);
+  background-color: rgb(63, 103, 156);
+  color: rgb(255, 255, 255);
   margin-right: 2px;
+  font-size: 18px;
 }
 
 #optionsBtn {
   width: 35px;
   height: 35px;
-  background-color: rgb(214, 218, 162);
+  background-color: rgb(63, 103, 156);
+  color:rgb(255, 255, 255);
+  font-size: 25px;
+  padding: 0;
 }
 
 button:focus,
@@ -73,6 +80,6 @@ input:focus,
 input:active {
   border: none;
   outline: 2px solid #eee;
-  background-color: rgb(252, 253, 234);
+  background-color: rgb(255, 255, 255);
 }
 </style>
