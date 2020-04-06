@@ -54,4 +54,8 @@ export default {
     padding-left: 0px;
     margin: 0px;
 }
+
+#newsPage {
+    padding: 0.75em 1em;
+}
 </style>

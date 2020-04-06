@@ -42,14 +42,13 @@ export default {
     width: 65%;
 }
 .newsArticle {
-    border-right: solid 2px #eee;
-    border-bottom: solid 2px #eee;
-    border-left: solid 2px #eee;
     overflow: hidden;
     display: flex;
 	flex-direction: row;
     background-color: rgb(63, 103, 156);
     max-height: 10%;
+    margin-bottom: 1em;
+    box-shadow: 0px 6px 9px -6px #444;
 }
 .newsImg {
     max-width: 90%;
@@ -59,31 +58,39 @@ export default {
     margin: 1em 0.2em;
     border: solid 1px #fff;
     align-self: center;
+    box-shadow: 0px 6px 9px -6px #444;
 }
 .newsSourceIcon {
     font-size: 12px;
-    margin-left: 0.7em;
+    margin: 1em 1em 0 0;
+    padding-left: 0.7em;
     width: 100%;
+    font-weight: 700;
     display: inline-block;
     align-self: flex-start;
     overflow: wrap;
     word-wrap: break-word;
-    text-decoration: underline;
+    background-color: #fff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    color: #000;
+    box-shadow: 0px 6px 9px -6px #444;
 }
 .newsContent{
     font-size: 14px;
     padding: 0.2em 0.6em 0.2em 1em;
-
 }
 .newsHeader {
     margin: 0.2em 0px;
+    font-weight: 500;
+    text-decoration: underline;
 }
 .newsHeader:hover {
-    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
 }
 .newsParagraph {
     margin: 0px;
     padding: 0.2em 0em;
+    font-weight: 400;
 }
 </style>

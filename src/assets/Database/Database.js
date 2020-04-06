@@ -3,21 +3,29 @@ export default {
         queryNumOfArts: '',
         querySort: '',
         queryDateFrom: '',
-        queryDateTo: ''
+        queryDateTo: '',
+        queryminDate: '',
+        querymaxDate: ''
     },
 
     checkDate: function() {
+
+        var dateObj = new Date();
+        var month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
+        var date = ('0' + dateObj.getDate()).slice(-2);
+        var year = dateObj.getFullYear();
+
+        var minDate = year + '-' + (month - 1) + '-' + date;
+        var maxDate = year + '-' + month + '-' + date;
+
+        this.db.minDate = minDate;
+        this.db.maxDate = maxDate;
+
         if (!this.db.queryDateTo) {
-            var dateObj = new Date();
-            var month = ('0' + (dateObj.getMonth() + 1)).slice(-2);
-            var date = ('0' + dateObj.getDate()).slice(-2);
-            var year = dateObj.getFullYear();
-            this.db.queryDateTo = year +
-            '-' + month +
-            '-' + date;
+            this.db.queryDateTo = maxDate;
         }
         if (!this.db.queryDateFrom) {
-            this.db.queryDateFrom = '2020-03-01';
+            this.db.queryDateFrom = minDate;
         }
     },
     checkSort: function() {

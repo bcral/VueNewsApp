@@ -34,9 +34,12 @@ export default {
 <style scoped>
 #mainBar {
   height: 35px;
-  padding-bottom: 5px;
+  padding: 0.75em 1em;
   border-bottom: solid 2px #eee;
   display: flex;
+  z-index: 2;
+  background-color: rgb(63, 103, 156);
+  box-shadow: 0px 6px 9px -6px #444;
 }
 
 #searchBox {
@@ -48,8 +51,6 @@ export default {
   width: 60vw;
   border: 2px solid #ccc;
   font-size: 14px;
-  display: flex;
-  float: left;
 }
 
 #searchBox::placeholder {
@@ -57,7 +58,7 @@ export default {
 }
 
 #searchBtn {
-  width: 35px;
+  min-width: 35px;
   height: 35px;
   background-color: rgb(63, 103, 156);
   color: rgb(255, 255, 255);
@@ -66,12 +67,12 @@ export default {
 }
 
 #optionsBtn {
-  width: 35px;
+  min-width: 35px;
   height: 35px;
   background-color: rgb(63, 103, 156);
   color:rgb(255, 255, 255);
   font-size: 25px;
-  padding: 0;
+  padding: 0 7px;
 }
 
 button:focus,

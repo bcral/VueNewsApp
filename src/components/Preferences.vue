@@ -32,14 +32,14 @@
             <div class="flexRow">
                 <label for="startDate">From Date:</label>
 
-                <input v-model="dateFrom" type="date" id="startDate" name="date-start"
-                    min="2018-01-01" max="current">
+                <input type="date" id="startDate" name="date-start"
+                    v-bind:min="minDate" v-bind:max="maxDate" v-model="dateFrom">
             </div>
             <div class="flexRow">
                 <label for="endtDate">Up To Date:</label>
 
-                <input v-model="dateTo" type="date" id="endDate" name="date-end"
-                    min="2018-01-01" max="current">
+                <input type="date" id="endDate" name="date-end"
+                    v-bind:min="minDate" v-bind:max="maxDate" v-model="dateTo">
             </div>
         </div>
         <button id="saveBtn" @click="saveClick">SAVE</button>
@@ -58,7 +58,9 @@ export default {
             numOfArts: this.$db.db.queryNumOfArts,
             sortValue: this.$db.db.querySort,
             dateTo: this.$db.db.queryDateTo,
-            dateFrom: this.$db.db.queryDateFrom
+            dateFrom: this.$db.db.queryDateFrom,
+            maxDate: this.$db.db.querymaxDate,
+            minDate: this.$db.db.queryminDate
             }
         },
     methods: {
@@ -74,6 +76,8 @@ export default {
             this.sortValue = this.$db.db.querySort;
             this.dateFrom = this.$db.db.queryDateFrom;
             this.dateTo = this.$db.db.queryDateTo;
+            this.maxDate = this.$db.db.maxDate,
+            this.minDate = this.$db.db.minDate
         }
     }
 }
@@ -81,8 +85,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#header {
+    font-weight: 500;
+    letter-spacing: 2px;
+}
 #prefCont {
     text-align: center;
+    font-weight: 500;
 }
 .flexRow {
     display: flex;

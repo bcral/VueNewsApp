@@ -32,7 +32,6 @@ export default {
   min-width: 288px;
   font-family: Arial, Helvetica, sans-serif;
   overflow-y: auto;
-  padding: 0.75em 1em;
   overflow: scroll;
   position: relative;
 }
