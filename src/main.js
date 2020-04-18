@@ -6,6 +6,8 @@ import NewsTab from './components/NewsTab.vue'
 import Preferences from './components/Preferences.vue'
 import Database from './assets/Database/Database.js'
 
+import vueCustomElement from 'vue-custom-element'
+
 Vue.config.productionTip = false
 
 Object.defineProperty(Vue.prototype, '$db', { value: Database });
@@ -33,8 +35,9 @@ const router = new VueRouter({
   ]
 })
 
+Vue.use(vueCustomElement)
+
 new Vue({
   router,
   render: function (h) { return h(App) }
 }).$mount('#app')
-
