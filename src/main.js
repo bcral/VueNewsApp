@@ -37,7 +37,10 @@ const router = new VueRouter({
 
 Vue.use(vueCustomElement)
 
-new Vue({
-  router,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+App.router = router
+Vue.customElement('vue-widget', App)
+
+// new Vue({
+//   router,
+//   render: function (h) { return h(App) }
+// }).$mount('#app')
