@@ -4,16 +4,12 @@ const path = require('path')
 
 const app = express()
 
-app.use(function (req, res) {
-	// Website you wish to allow to connect
-	res.setHeader('Access-Control-Allow-Origin', '*');
-})
-
 //here we are configuring dist to serve app files
 app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
 // this * route is to serve project on different page routes except root `/`
 app.get(/.*/, function (req, res) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
 	res.sendFile(path.join(__dirname, '/dist/index.html'))
 })
 
