@@ -6,7 +6,7 @@ const app = express()
 
 app.use(function (req, res) {
 	// Website you wish to allow to connect
-	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+	res.setHeader('Access-Control-Allow-Origin', 'http://www.brentcralley.com/');
 })
 
 //here we are configuring dist to serve app files
