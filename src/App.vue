@@ -34,10 +34,15 @@ export default {
   overflow-y: auto;
   overflow: scroll;
   position: relative;
+  margin: auto;
 }
 
 #displayEl {
   height: 100%;
   width: 100%;
+}
+
+h3 {
+  color: #fff;
 }
 </style>
