@@ -23,9 +23,9 @@ export default {
 <style>
 #container {
   resize: both;
-  background-color: rgb(63, 103, 156, 0.8);
+  background-color: rgba(92, 143, 209, 0.8);
   border: solid 2px rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   height: 380px;
   width: 288px;
   min-height: 380px;
@@ -43,6 +43,6 @@ export default {
 }
 
 h3 {
-  color: #fff;
+  color: #000;
 }
 </style>

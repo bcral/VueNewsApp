@@ -38,7 +38,7 @@ export default {
   border-bottom: solid 2px #eee;
   display: flex;
   z-index: 2;
-  background-color: rgb(63, 103, 156);
+  background-color: rgba(92, 143, 209, 0.8);
   box-shadow: 0px 6px 9px -6px #444;
 }
 
@@ -60,7 +60,7 @@ export default {
 #searchBtn {
   min-width: 35px;
   height: 35px;
-  background-color: rgb(63, 103, 156);
+  background-color: rgba(92, 143, 209, 0.8);
   color: rgb(255, 255, 255);
   margin-right: 2px;
   font-size: 18px;
@@ -69,7 +69,7 @@ export default {
 #optionsBtn {
   min-width: 35px;
   height: 35px;
-  background-color: rgb(63, 103, 156);
+  background-color: rgba(92, 143, 209, 0.8);
   color:rgb(255, 255, 255);
   font-size: 25px;
   padding: 0 7px;

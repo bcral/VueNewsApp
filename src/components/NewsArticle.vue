@@ -45,7 +45,7 @@ export default {
     overflow: hidden;
     display: flex;
 	flex-direction: row;
-    background-color: rgb(63, 103, 156);
+    background-color: rgb(204, 225, 255);
     max-height: 10%;
     margin-bottom: 1em;
     box-shadow: 0px 6px 9px -6px #444;
@@ -72,7 +72,7 @@ export default {
     word-wrap: break-word;
     background-color: #fff;
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-    color: #000;
+    color: rgb(63, 103, 156);
     box-shadow: 0px 6px 9px -6px #444;
 }
 .newsContent{
@@ -85,7 +85,7 @@ export default {
     text-decoration: underline;
 }
 .newsHeader:hover {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.55);
     cursor: pointer;
 }
 .newsParagraph {

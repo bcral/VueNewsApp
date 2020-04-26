@@ -31,5 +31,6 @@ export default {
     text-align: center;
     line-height: 25px;
     margin: 3em;
+    color: rgb(255, 255, 255);
 }
 </style>

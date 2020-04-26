@@ -88,10 +88,14 @@ export default {
 #header {
     font-weight: 500;
     letter-spacing: 2px;
+    color: #fff;
 }
 #prefCont {
     text-align: center;
     font-weight: 500;
+}
+label {
+    color: #fff;
 }
 .flexRow {
     display: flex;
