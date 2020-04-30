@@ -15,7 +15,7 @@ export default {
         var date = ('0' + dateObj.getDate()).slice(-2);
         var year = dateObj.getFullYear();
 
-        var minDate = year + '-' + (month - 1) + '-' + date;
+        var minDate = year + '-' + (month - 1) + '-' + (date + 1);
         var maxDate = year + '-' + month + '-' + date;
 
         this.db.minDate = minDate;

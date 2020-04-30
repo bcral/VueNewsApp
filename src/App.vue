@@ -28,13 +28,15 @@ export default {
   color: rgb(0, 0, 0);
   height: 380px;
   width: 288px;
+  max-height: 100%;
+  max-width: 100%;
   min-height: 380px;
   min-width: 288px;
   font-family: Arial, Helvetica, sans-serif;
   overflow-y: auto;
   overflow: scroll;
   position: relative;
-  margin: auto;
+  margin: 0;
 }
 
 #displayEl {
